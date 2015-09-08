@@ -1,0 +1,9 @@
+---
+# tasks file for mapr_drill_test
+
+- name: copy query1
+  copy: src=query1.sql dest=/tmp/query1.sql mode=0644
+
+- name: basic sqlline command
+  run_once: true
+  command: 'sqlline -u jdbc:drill: -n {{mapr_admin_username}} -p {{maprlogin_clear_pw|default("mapr")}} -f /tmp/query1.sql'

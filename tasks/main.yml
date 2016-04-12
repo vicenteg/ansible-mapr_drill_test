@@ -6,4 +6,4 @@
 
 - name: basic sqlline command
   run_once: true
-  command: 'sqlline -u jdbc:drill: -n {{mapr_admin_username}} -p {{maprlogin_clear_pw|default("mapr")}} -f /tmp/query1.sql'
+  command: 'sqlline -u jdbc:drill: -n {{mapr_admin_username}} -p {{maprlogin_pw_clear|default("mapr")}} -f /tmp/query1.sql'
